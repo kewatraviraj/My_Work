@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+package org.testDaoImpl;
+
+import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.database.Database;
+import org.testDao.Dao;
+import org.testPojo.Pojo;
+
+/**
+ * @author HP
+ *
+ */
+public class DaoImpl implements Dao {
+
+	@Override
+	public int insert(Pojo Value) throws ClassNotFoundException, SQLException, IOException {
+		// TODO Auto-generated method stub
+		PreparedStatement ps;
+		
+		ps = Database.getConnection().prepareStatement("insert into testserv(value1,value2,name) values(?,?,?)");
+		ps.setString(1,Value.getValue1());
+		ps.setString(2,Value.getValue2());
+		ps.setString(3,Value.getName());
+		
+		ps.close();
+		Database.getConnection().close();
+		return (ps.executeUpdate()==1 ? 1 : 0);
+	}
+
+	@Override
+	public List<Pojo> getAllUser() throws ClassNotFoundException, SQLException, IOException {
+		// TODO Auto-generated method stub
+		List<Pojo> users = new ArrayList<Pojo>();
+		
+		Statement stat = Database.getConnection().createStatement();
+		ResultSet result = stat.executeQuery("select id,name from testserv");
+		
+		Pojo user;
+		while(result.next()) {
+			user = new Pojo();
+			user.setId(result.getInt(1));
+			user.setName(result.getString(2));
+			
+			users.add(user);
+		}
+		result.close();
+		stat.close();
+		Database.getConnection().close();
+		return users;
+	}
+
+	@Override
+	public boolean del(int id) throws ClassNotFoundException, SQLException, IOException {
+		// TODO Auto-generated method stub
+		
+		Statement stat = Database.getConnection().createStatement();
+		int result = stat.executeUpdate("delete from testserv where id="+id);
+		
+		stat.close();
+		Database.getConnection().close();
+		return (result == 1 ? true : false);
+	}
+
+}

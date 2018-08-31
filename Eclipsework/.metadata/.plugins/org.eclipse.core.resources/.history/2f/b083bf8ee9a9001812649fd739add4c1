@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package org.database;
+
+import java.sql.*;
+
+
+/**
+ * @author HP
+ *
+ */
+public class Database {
+	String driver, url, username, password;
+	
+	public static Connection getConnection(String driver, String url, String username, String password) throws ClassNotFoundException, SQLException {
+		Class.forName( driver );  
+		Connection connection = DriverManager.getConnection( url, username, password);
+		return connection;  
+	}
+}

@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package org.database;
+
+import java.io.FileInputStream;
+import java.sql.*;
+import java.util.Properties;
+
+
+/**
+ * @author HP
+ *
+ */
+public class Database {
+	String driver, url, username, password;
+	
+	 Properties prop=new Properties();
+     FileInputStream in = new FileInputStream(System.getProperty("WEB-INF/dbConnection.properties"));
+     prop.load(in);
+     in.close();
+
+     String drivers = prop.getProperty("jdbc.drivers");
+     String connectionURL = prop.getProperty("jdbc.url");
+     String username = prop.getProperty("jdbc.username");
+     String password = prop.getProperty("jdbc.password");
+	
+	public static Connection getConnection(String driver, String url, String username, String password) throws ClassNotFoundException, SQLException {
+		Class.forName( driver );  
+		Connection connection = DriverManager.getConnection( url, username, password);
+		return connection;  
+	}
+}

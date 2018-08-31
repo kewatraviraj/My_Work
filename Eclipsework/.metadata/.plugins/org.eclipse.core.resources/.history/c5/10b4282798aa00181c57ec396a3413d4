@@ -1,0 +1,15 @@
+package com.basic.pojo;
+
+import java.math.BigInteger;
+
+public class UserPojo {
+
+	private int user_id;
+	private int role_id;
+	private String firstname;
+	private String lastname;
+	private String email;
+	private BigInteger mobile_no;
+	private String value2;
+	private String name;
+}

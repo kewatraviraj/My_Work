@@ -1,0 +1,8 @@
+com\basic\dao\Dao.class
+com\basic\database\Database.class
+com\basic\pojo\UserPojo.class
+com\basic\controller\ControllerUpdate.class
+com\basic\pojo\FilesPojo.class
+com\basic\pojo\AddressPojo.class
+com\basic\daoImpl\DaoImpl.class
+com\basic\controller\ControllerRegister.class

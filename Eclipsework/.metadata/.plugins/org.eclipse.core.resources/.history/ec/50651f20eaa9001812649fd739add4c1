@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package org.database;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.*;
+import java.util.Properties;
+
+
+/**
+ * @author HP
+ *
+ */
+public class Database {
+	String driver, url, username, password;
+	
+
+	public static Connection getConnection(String driver, String url, String username, String password) throws ClassNotFoundException, SQLException, IOException {
+		
+		 Properties prop=new Properties();
+	     FileInputStream in = new FileInputStream(System.getProperty("custom.properties"));
+	     prop.load(in);
+	     in.close();
+
+	     driver = prop.getProperty("driverClassName");
+	     url = prop.getProperty("url");
+	     username = prop.getProperty("username");
+	     password = prop.getProperty("password");
+		
+		Class.forName( driver );  
+		Connection connection = DriverManager.getConnection( url, username, password);
+		return connection;  
+	}
+}

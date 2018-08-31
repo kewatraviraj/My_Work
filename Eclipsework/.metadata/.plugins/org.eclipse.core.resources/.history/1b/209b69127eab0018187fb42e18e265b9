@@ -1,0 +1,50 @@
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+<html>
+<body>
+	<h2>welcome to Register</h2>
+	<form action="UserRegistrationController" method="post">
+		<select name="role">
+			<option value="1">Admin</option>
+			<option value="2">User</option>
+		</select>
+		<br> Enter First Name :<input type="text" name="firstName" id="firstName"><br>
+			 Enter Last Name :<input type="text" name="lastName" id="lastName"><br> 
+			 Enter Email :<inpu type="email" name="email" id="email"><br> 
+			 <input type="radio" value="M" name="gender">Male 
+			 <input type="radio" value="F" name="gender">Female <br> 
+			 Enter Mobile No :<input type="text" name="mobileNo" id="mobileNo"><br><br> 
+			 Enter Date of Birth :<input type="date" name="dateOfBirth" id="dateOfBirth"><br>
+			 Enter Password :<input type="password" name="password" id="password"><br>
+		
+			<input type="submit" value="submit"><br>
+	</form>
+	<table>
+		<tr>
+			<td>User ID</td>
+			<td>suffix</td>
+			<td>F Name</td>
+			<td>L Name</td>
+			<td>Gender</td>
+			<td>Mobile No</td>
+			<td>Alternate No</td>
+			<td>email</td>
+			<td>Date of Birth</td>
+			<td>Password</td>
+		</tr>
+		<c:forEach items="${requestScope.users }" var="user">
+			<tr>
+				<td><c:out value="${user.userId }"></c:out>
+				<td><c:out value="${user.suffix }"></c:out>
+				<td><c:out value="${user.firstName }"></c:out>
+				<td><c:out value="${user.lastName }"></c:out>
+				<td><c:out value="${user.gender }"></c:out>
+				<td><c:out value="${user.mobileNo }"></c:out>
+				<td><c:out value="${user.alternateNo }"></c:out>
+				<td><c:out value="${user.email }"></c:out>
+				<td><c:out value="${user.dateOfBirth }"></c:out>
+				<td><c:out value="${user.password }"></c:out>
+			</tr>
+		</c:forEach>
+	</table>
+</body>
+</html>

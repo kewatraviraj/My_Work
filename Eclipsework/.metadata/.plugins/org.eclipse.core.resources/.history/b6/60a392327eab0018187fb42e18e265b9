@@ -1,0 +1,70 @@
+package com.basic.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.basic.dao.Dao;
+import com.basic.daoImpl.DaoImpl;
+import com.basic.pojo.UserPojo;
+
+/**
+ * Servlet implementation class registerController
+ */
+public class RegisterController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	UserPojo userpojo;
+	Dao service;
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RegisterController() {
+        super();
+        // TODO Auto-generated constructor stub
+        userpojo = new UserPojo();
+        service = new DaoImpl();
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		userpojo.setRole_id(Integer.parseInt(request.getParameter("role")));
+		userpojo.setFirstname(request.getParameter("firstName"));
+		userpojo.setLastname(request.getParameter("lastName"));
+		userpojo.setEmail(request.getParameter("email"));
+		userpojo.setMobile_no(Long.parseLong(request.getParameter("mobileNo")));
+		userpojo.setPassword(request.getParameter("password"));
+		userpojo.setGender(request.getParameter("gender"));
+		userpojo.setDate_of_birth(request.getParameter("dateOfBirth"));
+		
+		try {
+			if(service.insert(userpojo, null)) {
+				
+				RequestDispatcher redirect = request.getRequestDispatcher("");
+				redirect.forward(request, response);
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

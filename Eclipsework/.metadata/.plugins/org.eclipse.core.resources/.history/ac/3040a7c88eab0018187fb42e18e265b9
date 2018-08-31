@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package com.basic.dao;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.basic.pojo.AddressPojo;
+import com.basic.pojo.UserPojo;
+
+/**
+ * @author HP
+ *
+ */
+public interface Dao {
+	
+	public boolean insert(UserPojo Value1,AddressPojo Value2) throws ClassNotFoundException, SQLException, IOException;
+	public boolean updateUser(UserPojo Value1,AddressPojo Value2) throws ClassNotFoundException, SQLException, IOException;
+	public List<UserPojo> getAllUser() throws ClassNotFoundException, SQLException, IOException;
+	public boolean del(int i) throws ClassNotFoundException, SQLException, IOException;
+}

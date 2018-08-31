@@ -1,0 +1,16 @@
+<html>
+<body>
+	<h2>Hello World!</h2>
+
+	<a href='fetch?action=get'>Show Users</a>
+	<br />
+	<br />
+	<form action="send" method="post">
+		Value1:<input type="text" name="test"><br />
+		<br /> Value2:<input type="text" name="test2"><br />
+		<br /> Name:<input type="text" name="testname">
+		<button>Send</button>
+	</form>
+
+</body>
+</html>

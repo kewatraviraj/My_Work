@@ -1,0 +1,52 @@
+package com.basic.pojo;
+
+import java.sql.Blob;
+
+public class FilesPojo {
+	
+	private int file_id;
+	private String file_type;
+	private Blob file;
+	private String created_time;
+	private int update_by;
+	private String update_time;
+	
+	public int getFile_id() {
+		return file_id;
+	}
+	public void setFile_id(int file_id) {
+		this.file_id = file_id;
+	}
+	public String getFile_type() {
+		return file_type;
+	}
+	public void setFile_type(String file_type) {
+		this.file_type = file_type;
+	}
+	public Blob getFile() {
+		return file;
+	}
+	public void setFile(Blob file) {
+		this.file = file;
+	}
+	public String getCreated_time() {
+		return created_time;
+	}
+	public void setCreated_time(String created_time) {
+		this.created_time = created_time;
+	}
+	public int getUpdate_by() {
+		return update_by;
+	}
+	public void setUpdate_by(int update_by) {
+		this.update_by = update_by;
+	}
+	public String getUpdate_time() {
+		return update_time;
+	}
+	public void setUpdate_time(String update_time) {
+		this.update_time = update_time;
+	}
+	
+	
+}

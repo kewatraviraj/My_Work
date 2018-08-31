@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Dynamic</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+	  <filter-name>RequestLoggingFilter</filter-name> <!-- mandatory -->
+	  <filter-class>com.RequestLoggingFilter</filter-class> <!-- mandatory -->
+	  <init-param> <!-- optional -->
+	  <param-name>test</param-name>
+	  <param-value>testValue</param-value>
+	  </init-param>
+	</filter>
+	  
+  <filter-mapping>
+	  <filter-name>RequestLoggingFilter</filter-name> <!-- mandatory -->
+	  <url-pattern>/*</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+	  <servlet-name>LoginServlet</servlet-name>
+	  <dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	 <servlet>
+	  	<servlet-name>LoginServlet</servlet-name>
+	  	<servlet-class>com.Direct</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	  	<servlet-name>LoginServlet</servlet-name>
+	  	<url-pattern>/*</url-pattern>
+	  </servlet-mapping>
+</web-app>

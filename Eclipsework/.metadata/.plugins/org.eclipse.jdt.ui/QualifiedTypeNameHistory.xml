@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="com.testDirect.ExampleDirect"/>
+<fullyQualifiedTypeName name="com.testService.ExampleService"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.database.DatabaseService"/>
+<fullyQualifiedTypeName name="com.testPojo.ExamplePojo"/>
+<fullyQualifiedTypeName name="com.testDao.ExampleDao"/>
+<fullyQualifiedTypeName name="com.testDaoImpl.ExampleDaoImpl"/>
+<fullyQualifiedTypeName name="edu.database.DatabaseService"/>
+<fullyQualifiedTypeName name="edu.testDirect.ExampleDirect"/>
+<fullyQualifiedTypeName name="edu.testService.ExampleService"/>
+<fullyQualifiedTypeName name="org.testPojo.Pojo"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="org.testController.Controller"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="com.basic.pojo.UserPojo"/>
+<fullyQualifiedTypeName name="com.basic.dao.Dao"/>
+<fullyQualifiedTypeName name="com.basic.daoImpl.DaoImpl"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.mysql.cj.jdbc.Blob"/>
+<fullyQualifiedTypeName name="java.sql.Blob"/>
+<fullyQualifiedTypeName name="java.net.ResponseCache"/>
+<fullyQualifiedTypeName name="com.basic.pojo.FilesPojo"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
+<fullyQualifiedTypeName name="com.basic.pojo.AddressPojo"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+</qualifiedTypeNameHistroy>

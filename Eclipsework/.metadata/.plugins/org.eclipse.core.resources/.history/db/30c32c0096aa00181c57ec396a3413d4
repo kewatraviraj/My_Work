@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package com.basic.dao;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.basic.pojo.Pojo;
+
+
+
+/**
+ * @author HP
+ *
+ */
+public interface Dao {
+
+	public int insert(Pojo Value) throws ClassNotFoundException, SQLException, IOException;
+}

@@ -1,0 +1,14 @@
+package com.basic.pojo;
+
+import java.sql.Blob;
+
+public class FilesPojo {
+	
+	private int file_id;
+	private String file_type;
+	private Blob file;
+	private String created_time;
+	private int update_by;
+	private String update_time;
+
+}

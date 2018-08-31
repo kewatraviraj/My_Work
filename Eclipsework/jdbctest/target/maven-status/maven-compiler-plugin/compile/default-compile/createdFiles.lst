@@ -1,0 +1,5 @@
+org\testService\Service.class
+org\testDaoImpl\DaoImpl.class
+org\database\Database.class
+org\testDao\Dao.class
+org\testPojo\Pojo.class
